@@ -25,8 +25,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Move () {
-        
-
         rigidbody.velocity = new Vector2(
             Input.GetAxisRaw("Horizontal") * speed,
             rigidbody.velocity.y
