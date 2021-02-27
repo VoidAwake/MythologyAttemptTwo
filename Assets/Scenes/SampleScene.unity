@@ -328,6 +328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 8987472523856307888, guid: 1f767fcb8cac2b84d829c1242784d6e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f767fcb8cac2b84d829c1242784d6e1, type: 3}
 --- !u!1 &519420028
@@ -724,7 +729,7 @@ PrefabInstance:
     - target: {fileID: 4749685156847520334, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
         type: 3}
       propertyPath: speed
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8764595997110263059, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
         type: 3}

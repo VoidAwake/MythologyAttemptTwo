@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpImpulse;
     [SerializeField] private float gravity;
+    
     private bool grounded = false;
 
     private float movement;
