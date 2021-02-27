@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float movement;
 
-    [SerializeField] private float leftFoot;
+    [SerializeField] private Transform leftFoot;
 
-    [SerializeField] private float rightFoot;
+    [SerializeField] private Transform rightFoot;
     private new Rigidbody2D rigidbody;
 
     private void Start()
@@ -26,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
         Move();
 
         if (Input.GetButtonDown("Jump")) {
-            RaycastHit2D left = Physics2D.Raycast(leftFoot,leftFoot+vector2.down*0.1);
-            RaycastHit2D right = Physics2D.Raycast(rightFoot,rightFoot+vector2.down*0.1);
+            RaycastHit2D left = Physics2D.Raycast(leftFoot.position,(Vector2)leftFoot.position+Vector2.down*0.1f);
+            RaycastHit2D right = Physics2D.Raycast(rightFoot.position,(Vector2)rightFoot.position + Vector2.down*0.1f);
             if(left.collider || right.collider) Jump();
         }
 
