@@ -1,20 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Controls controls;
+    [SerializeField] private float speed;
 
     private float movement;
 
+    private new Rigidbody2D rigidbody;
+
     private void Start()
     {
-        controls.Player.Jump.performed += ctx => Jump();
-
-        controls.Player.Movement.performed += ctx => movement = ctx.ReadValue<float>();
-        controls.Player.Movement.performed += ctx => movement = 0;
     }
 
     private void Update()
@@ -27,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Move () {
+        // Debug.Log(movement);
 
+        // rigidbody.velocity = new Vector2(
+        //     movement * speed,
+        //     rigidbody.velocity.y
+        // );
     }
 }
