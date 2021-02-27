@@ -277,7 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 304739930}
   - component: {fileID: 304739931}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,10 +895,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 133628687653346672, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 706256735652480392, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
         type: 3}
       propertyPath: m_Name
       value: PlayerPlaceHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 706256735652480392, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4749685156847520334, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
         type: 3}
@@ -908,7 +918,7 @@ PrefabInstance:
     - target: {fileID: 4749685156847520334, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
         type: 3}
       propertyPath: gravity
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4749685156847520334, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
         type: 3}
@@ -922,8 +932,18 @@ PrefabInstance:
       objectReference: {fileID: 2056148123}
     - target: {fileID: 4749685156847520334, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
         type: 3}
+      propertyPath: feet.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749685156847520334, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
+        type: 3}
       propertyPath: jumpImpulse
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925979236400165832, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8764595997110263059, guid: 01d58b3a679bbbe4fa3c94144a93d92e,
         type: 3}
