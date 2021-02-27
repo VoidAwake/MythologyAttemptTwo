@@ -7,7 +7,6 @@ public class Health : MonoBehaviour
 {
     public static Health health;
     public Image fullHearts;
-    public Image emptyHearts;
     public Text enemyText;
 
     private int curHP;
