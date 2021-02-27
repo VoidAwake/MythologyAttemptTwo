@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public static Health health;
     public Image hearts;
     public Text enemyText;
 
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = this;
         curHP = maxHP;
         UpdateUI();
     }
@@ -30,17 +32,17 @@ public class Health : MonoBehaviour
         if (curHP == 0) Die();
 
     }
-    public void DamageEnemy(int att)
+    public static void DamageEnemy(int att)
     {
-        bossHP -= att;
+        health.bossHP -= att;
         //enemyText.text = enemyHP;
     }
 
-    public void DamagePlayer(int att)
+    public static void DamagePlayer(int att)
     {
-        curHP -= att;
-        curHP = Mathf.Clamp(curHP, 0, maxHP);
-        UpdateUI();
+        health.curHP -= att;
+        health.curHP = Mathf.Clamp(health.curHP, 0, health.maxHP);
+        health.UpdateUI();
         //enemyText.text = enemyHP;
     }
     private void Die()
