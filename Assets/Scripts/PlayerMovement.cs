@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -24,11 +25,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Move () {
-        // Debug.Log(movement);
+        
 
-        // rigidbody.velocity = new Vector2(
-        //     movement * speed,
-        //     rigidbody.velocity.y
-        // );
+        rigidbody.velocity = new Vector2(
+            Input.GetAxisRaw("Horizontal") * speed,
+            rigidbody.velocity.y
+        );
     }
 }
