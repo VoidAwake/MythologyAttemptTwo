@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float movement;
 
+    [SerializeField] private Transform leftFoot;
+
+    [SerializeField] private Transform rightFoot;
     private new Rigidbody2D rigidbody;
 
     private void Start()
@@ -24,12 +27,12 @@ public class PlayerMovement : MonoBehaviour
         Move();
 
         if (Input.GetButtonDown("Jump")) {
-            Jump();
+            RaycastHit2D left = Physics2D.Raycast(leftFoot.position,(Vector2)leftFoot.position+Vector2.down*0.1f);
+            RaycastHit2D right = Physics2D.Raycast(rightFoot.position,(Vector2)rightFoot.position + Vector2.down*0.1f);
+            if(left.collider || right.collider) Jump();
         }
 
-        if (!grounded){
-            Gravity();
-        }
+        Gravity();
     }
 
     private void Jump () {
@@ -45,12 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Gravity() {
         rigidbody.AddForce(transform.up * -1 * gravity);
-    }
-
-    private void OnCollisionEnter2D(Collision2D floor) {
-        if(floor.gameObject.tag == "floor"){
-            grounded = true;
-        }
     }
     
     private void OnTriggerEnter2D(Collider2D other) {

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public static Health health;
-    public Image hearts;
+    public Image fullHearts;
     public Text enemyText;
 
     private int curHP;
@@ -21,16 +21,9 @@ public class Health : MonoBehaviour
         UpdateUI();
     }
 
-    // Update is called once per frame
-    public void Update()
-    {
-
-    }
     public void UpdateUI()
     {
-        hearts.rectTransform.sizeDelta = new Vector2(50 * curHP, 50);
-        if (curHP == 0) Die();
-
+        fullHearts.rectTransform.sizeDelta = new Vector2(50 * curHP, 50);
     }
     public static void DamageEnemy(int att)
     {
@@ -43,6 +36,7 @@ public class Health : MonoBehaviour
         health.curHP -= att;
         health.curHP = Mathf.Clamp(health.curHP, 0, health.maxHP);
         health.UpdateUI();
+        if (health.curHP == 0) health.Die();
         //enemyText.text = enemyHP;
     }
     private void Die()
