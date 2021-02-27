@@ -660,8 +660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee03d6dec227af4bb7770ba0a3ad045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 0}
+  fire: {fileID: 7088384016162946234, guid: 3a40d27836c0555469b2e307c4a26e0a, type: 3}
   curPhase: 0
+  player: {fileID: 0}
 --- !u!114 &1787734870
 MonoBehaviour:
   m_ObjectHideFlags: 0
