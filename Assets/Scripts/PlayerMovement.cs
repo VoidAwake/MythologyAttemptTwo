@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform rightFoot;
     private new Rigidbody2D rigidbody;
+    public LayerMask feet;
 
     private void Start()
     {
@@ -27,9 +28,9 @@ public class PlayerMovement : MonoBehaviour
         Move();
 
         if (Input.GetButtonDown("Jump")) {
-            RaycastHit2D left = Physics2D.Raycast(leftFoot.position,(Vector2)leftFoot.position+Vector2.down*0.1f);
-            RaycastHit2D right = Physics2D.Raycast(rightFoot.position,(Vector2)rightFoot.position + Vector2.down*0.1f);
-            if(left.collider || right.collider) Jump();
+            RaycastHit2D left = Physics2D.Raycast(leftFoot.position, (Vector2)leftFoot.position, 0.1f, feet);
+            RaycastHit2D right = Physics2D.Raycast(rightFoot.position, (Vector2)rightFoot.position, 0.1f, feet);
+            if (left.collider || right.collider) Jump();
         }
 
         Gravity();
