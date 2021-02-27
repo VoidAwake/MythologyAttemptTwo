@@ -28,9 +28,10 @@ public class PlayerMovement : MonoBehaviour
         Move();
 
         if (Input.GetButtonDown("Jump")) {
-            RaycastHit2D left = Physics2D.Raycast(leftFoot.position, (Vector2)leftFoot.position, 0.1f, feet);
-            RaycastHit2D right = Physics2D.Raycast(rightFoot.position, (Vector2)rightFoot.position, 0.1f, feet);
-            if (left.collider || right.collider) Jump();
+            //RaycastHit2D left = Physics2D.Raycast(leftFoot.position, (Vector2)leftFoot.position, 0.1f, feet);
+            //RaycastHit2D right = Physics2D.Raycast(rightFoot.position, (Vector2)rightFoot.position, 0.1f, feet);
+            //if (left.collider || right.collider) Jump();
+            Jump();
         }
 
         Gravity();
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump () {
         rigidbody.AddForce(transform.up * jumpImpulse, ForceMode2D.Impulse);
+        
     }
 
     private void Move () {
@@ -57,3 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+
+
+
+
