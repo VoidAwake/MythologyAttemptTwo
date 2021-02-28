@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Text timerText;
     [SerializeField] private Slider score;
     private float timer;
+    private float maxTimer = 20;
+    private float minTimer = 12;
     public static int level;
     private GridSetup grid;
     public static float maxScore;
@@ -35,5 +37,6 @@ public class LevelManager : MonoBehaviour
     void ResetLevel()
     {
         levelName.text = grid.Reset();
+        timer = Mathf.Clamp(maxTimer - timer, minTimer, maxTimer);
     }
 }
