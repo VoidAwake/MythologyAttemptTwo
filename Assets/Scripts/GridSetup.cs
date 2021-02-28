@@ -10,7 +10,10 @@ public class GridSetup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Create();
+    }
+    void Create()
+    {
         int i = Random.Range(0, maps.Length);
 
         for (int x = 0; x < 40; x++)
@@ -21,10 +24,13 @@ public class GridSetup : MonoBehaviour
             }
         }
     }
-
     // Update is called once per frame
-    void Update()
+    public void Reset()
     {
-
+        foreach (var item in GetComponentsInChildren<SpriteRenderer>())
+        {
+            Destroy(item.gameObject);
+        }
+        Create();
     }
 }

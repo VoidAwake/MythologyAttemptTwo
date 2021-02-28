@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public Text levelName;
     public Text timer;
-
+    public static int level;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +18,9 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         
+    }
+    void ResetLevel()
+    {
+
     }
 }
