@@ -8,14 +8,14 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Text levelName;
     [SerializeField] private Text timerText;
     [SerializeField] private Slider score;
-    public float timer;
+    public static float timer;
     private float maxTimer = 20;
     private float minTimer = 12;
     public static int level;
     private GridSetup grid;
     public static float maxScore;
     public static float currentScore = 20;
-    public static float roundCount = 0;
+    public static float roundCount = 10;
     // Start is called before the first frame update
     void Start()
     {
