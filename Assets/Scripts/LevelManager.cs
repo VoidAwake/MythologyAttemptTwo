@@ -7,11 +7,12 @@ public class LevelManager : MonoBehaviour
 {
     public Text levelName;
     public Text timerText;
+    public Slider score;
     private float timer;
     public static int level;
     public GridSetup grid;
     public static float maxScore;
-    public static float currentScore;
+    public static float currentScore = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,8 @@ public class LevelManager : MonoBehaviour
     void UpdateUI()
     {
         timerText.text = Mathf.RoundToInt(timer) + "";
+        score.value = currentScore/maxScore;
+        
     }
     void ResetLevel()
     {
