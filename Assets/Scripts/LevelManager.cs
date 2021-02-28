@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Text levelName;
     [SerializeField] private Text timerText;
     [SerializeField] private Slider score;
-    private float timer;
+    public float timer;
     private float maxTimer = 20;
     private float minTimer = 12;
     public static int level;
