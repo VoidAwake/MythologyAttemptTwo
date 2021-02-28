@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
             //RaycastHit2D left = Physics2D.Raycast(leftFoot.position, (Vector2)leftFoot.position, 0.1f, feet);
             //RaycastHit2D right = Physics2D.Raycast(rightFoot.position, (Vector2)rightFoot.position, 0.1f, feet);
             //if (left.collider || right.collider) Jump();
-            if (rigidbody.velocity.y <= 0.10f) Jump(1);
+            if (rigidbody.velocity.y <= 0.25f) Jump(1);
             //delay -= Time.deltaTime * 20;
         }
         else delay = 1;
