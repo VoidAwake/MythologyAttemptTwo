@@ -331,6 +331,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299393942}
   m_CullTransparentMesh: 0
+--- !u!1 &321465465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7759935430055659383, guid: ad80d7292a4aa1742827ecea90859bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1315076867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &321465466
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321465465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ae64e4af4588fa4f89283fd07d26257, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &321465470 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6757468691941137110, guid: ad80d7292a4aa1742827ecea90859bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1315076867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &449102278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1226,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2564713772836128945, guid: ad80d7292a4aa1742827ecea90859bf4,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 321465466}
+    - target: {fileID: 2564713772836128945, guid: ad80d7292a4aa1742827ecea90859bf4,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 321465470}
+    - target: {fileID: 4689857525774317114, guid: ad80d7292a4aa1742827ecea90859bf4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757468691941137110, guid: ad80d7292a4aa1742827ecea90859bf4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1866080321450298439, guid: 22ded03b11bb0b44b84ae4babbd6dac9,
+        type: 3}
     - target: {fileID: 6757468691941137110, guid: ad80d7292a4aa1742827ecea90859bf4,
         type: 3}
       propertyPath: m_SortingOrder
