@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class LevelManager : MonoBehaviour
     private GridSetup grid;
     public static float maxScore;
     public static float currentScore = 20;
-    public static float roundCount = 10;
+    public static float roundCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,10 @@ public class LevelManager : MonoBehaviour
     }
     void ResetLevel()
     {
+        if (currentScore < maxScore) SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
+        if (PlayerPrefs.GetInt("score") == 0) PlayerPrefs.SetInt("score", 1);
+        else PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
+
         levelName.text = grid.Reset();
         if (maxTimer > minTimer) maxTimer--;
         timer = maxTimer;
