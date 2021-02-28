@@ -1346,6 +1346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1678216148}
+  - component: {fileID: 1678216149}
   m_Layer: 0
   m_Name: BulletController
   m_TagString: Untagged
@@ -1367,6 +1368,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678216149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678216147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a79efe379a274a44b43b8bc458ea2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 321465465}
+  Bullet: {fileID: 4842171880954163956, guid: 626ba86d35a895f4eb51a53a53f308b4, type: 3}
 --- !u!1001 &1743202046
 PrefabInstance:
   m_ObjectHideFlags: 0
