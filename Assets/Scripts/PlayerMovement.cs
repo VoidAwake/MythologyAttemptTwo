@@ -72,8 +72,14 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.tag == "enemy"){
             Health.DamagePlayer(1);
         }
+        if(other.gameObject.tag == "pewpew"){
+            rigidbody.AddForce(new Vector2(10f,0f), ForceMode2D.Impulse);
+        }
     }
 }
+
+
+
 
 
 
