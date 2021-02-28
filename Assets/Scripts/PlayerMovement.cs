@@ -28,15 +28,16 @@ public class PlayerMovement : MonoBehaviour
     private void LateUpdate()
     {
         Move();
-        delay += Time.deltaTime * 1.05f;
         delay = Mathf.Clamp(delay, 0, 1);
-        if (Input.GetButton("Jump")) {
+        if (Input.GetButtonDown("Jump"))
+        {
             //RaycastHit2D left = Physics2D.Raycast(leftFoot.position, (Vector2)leftFoot.position, 0.1f, feet);
             //RaycastHit2D right = Physics2D.Raycast(rightFoot.position, (Vector2)rightFoot.position, 0.1f, feet);
             //if (left.collider || right.collider) Jump();
-            if (rigidbody.velocity.y <= 0.05f) Jump(1); else Jump(delay);
-            delay = 0;
+            if (rigidbody.velocity.y <= 0.05f) Jump(1);
+            //delay -= Time.deltaTime * 20;
         }
+        else delay = 1;
 
         Gravity();
     }
