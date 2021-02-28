@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private new Rigidbody2D rigidbody;
     public LayerMask feet;
 
+    public float delay;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -26,19 +28,21 @@ public class PlayerMovement : MonoBehaviour
     private void LateUpdate()
     {
         Move();
-
-        if (Input.GetButtonDown("Jump")) {
+        delay += Time.deltaTime * 1.05f;
+        delay = Mathf.Clamp(delay, 0, 1);
+        if (Input.GetButton("Jump")) {
             //RaycastHit2D left = Physics2D.Raycast(leftFoot.position, (Vector2)leftFoot.position, 0.1f, feet);
             //RaycastHit2D right = Physics2D.Raycast(rightFoot.position, (Vector2)rightFoot.position, 0.1f, feet);
             //if (left.collider || right.collider) Jump();
-            Jump();
+            if (rigidbody.velocity.y <= 0.05f) Jump(1); else Jump(delay);
+            delay = 0;
         }
 
         Gravity();
     }
 
-    private void Jump () {
-        rigidbody.AddForce(transform.up * jumpImpulse, ForceMode2D.Impulse);
+    private void Jump (float _delay) {
+        rigidbody.AddForce(transform.up * jumpImpulse * _delay, ForceMode2D.Impulse);
         
     }
 
