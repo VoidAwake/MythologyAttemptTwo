@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float delay;
 
+    [SerializeField] private Animator anim;
+    [SerializeField] private SpriteRenderer rend;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -29,11 +32,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         delay = Mathf.Clamp(delay, 0, 1);
+        RaycastHit2D left = Physics2D.Raycast(leftFoot.position, leftFoot.position, 0.05f, feet);
+        RaycastHit2D right = Physics2D.Raycast(rightFoot.position, rightFoot.position, 0.05f, feet);
+        anim.SetBool("Grounded", left.collider || right.collider);
+        anim.SetBool("Speed", Input.GetAxisRaw("Horizontal") != 0);
+        rend.flipX = rigidbody.velocity.x < 0;
         if (Input.GetButtonDown("Jump"))
         {
-            //RaycastHit2D left = Physics2D.Raycast(leftFoot.position, (Vector2)leftFoot.position, 0.1f, feet);
-            //RaycastHit2D right = Physics2D.Raycast(rightFoot.position, (Vector2)rightFoot.position, 0.1f, feet);
-            //if (left.collider || right.collider) Jump();
             if (rigidbody.velocity.y <= 0.25f) Jump(1);
             //delay -= Time.deltaTime * 20;
         }
