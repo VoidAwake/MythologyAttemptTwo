@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     private GridSetup grid;
     public static float maxScore;
     public static float currentScore = 20;
+    public static float roundCount = 0;
     // Start is called before the first frame update
     void Start()
     {
