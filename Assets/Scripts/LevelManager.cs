@@ -43,9 +43,7 @@ public class LevelManager : MonoBehaviour
         else PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
 
         levelName.text = grid.Reset();
-        if (maxTimer > minTimer) maxTimer--;
-        timer = maxTimer;
-        currentScore = 20;
+        timer = Mathf.Clamp(maxTimer -= timer, minTimer, maxTimer);
         roundCount += 1;
     }
 }
