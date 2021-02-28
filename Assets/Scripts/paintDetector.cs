@@ -16,7 +16,7 @@ public class paintDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D paint){
         if(paint.gameObject.tag == "painter"){
-            Instantiate(replaceWith, transform.position, Quaternion.identity);
+            Instantiate(replaceWith, transform.position, Quaternion.identity, replaceWith.transform.parent);
             Destroy(gameObject);
             LevelManager.currentScore += Score;
         }
