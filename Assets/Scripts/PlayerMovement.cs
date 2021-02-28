@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded = false;
 
     private float movement;
+    private float x;
 
     [SerializeField] private Transform leftFoot;
 
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        x = 0f;
     }
 
     private void Update()
@@ -41,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
         else delay = 1;
 
         Gravity();
+        if(x > 0){
+            x = x-10;
+        }
     }
     private void LateUpdate()
     {
@@ -59,9 +64,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move () {
         rigidbody.velocity = new Vector2(
-             movement * speed,
+             movement * speed + x,
             rigidbody.velocity.y
         );
+        
     }
 
     private void Gravity() {
@@ -73,7 +79,9 @@ public class PlayerMovement : MonoBehaviour
             Health.DamagePlayer(1);
         }
         if(other.gameObject.tag == "pewpew"){
-            rigidbody.AddForce(new Vector2(10f,0f), ForceMode2D.Impulse);
+            x = 100f;
+            Move();
+            Debug.Log("hit");
         }
     }
 }
