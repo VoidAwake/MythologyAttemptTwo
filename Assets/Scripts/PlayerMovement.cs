@@ -28,15 +28,11 @@ public class PlayerMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
+        movement = Input.GetAxisRaw("Horizontal");
         Move();
         delay = Mathf.Clamp(delay, 0, 1);
-        RaycastHit2D left = Physics2D.Raycast(leftFoot.position, leftFoot.position, 0.05f, feet);
-        RaycastHit2D right = Physics2D.Raycast(rightFoot.position, rightFoot.position, 0.05f, feet);
-        anim.SetBool("Grounded", left.collider || right.collider);
-        anim.SetBool("Speed", Input.GetAxisRaw("Horizontal") != 0);
-        rend.flipX = rigidbody.velocity.x < 0;
         if (Input.GetButtonDown("Jump"))
         {
             if (rigidbody.velocity.y <= 0.25f) Jump(1);
@@ -46,6 +42,15 @@ public class PlayerMovement : MonoBehaviour
 
         Gravity();
     }
+    private void LateUpdate()
+    {
+        //RaycastHit2D left = Physics2D.Raycast(leftFoot.position, leftFoot.position, 0.05f, feet);
+        //RaycastHit2D right = Physics2D.Raycast(rightFoot.position, rightFoot.position, 0.05f, feet);
+        //anim.SetBool("Grounded", left.collider || right.collider);
+        anim.SetBool("Grounded", transform.position.y < -6);
+        anim.SetBool("Speed", Input.GetAxisRaw("Horizontal") != 0);
+        if (movement != 0) rend.flipX = movement < 0;
+    }
 
     private void Jump (float _delay) {
         rigidbody.AddForce(transform.up * jumpImpulse * _delay, ForceMode2D.Impulse);
@@ -54,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move () {
         rigidbody.velocity = new Vector2(
-            Input.GetAxisRaw("Horizontal") * speed,
+             movement * speed,
             rigidbody.velocity.y
         );
     }
