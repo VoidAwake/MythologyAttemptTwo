@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+        if (timer <= 0) ResetLevel();
         UpdateUI();
     }
     void UpdateUI()
