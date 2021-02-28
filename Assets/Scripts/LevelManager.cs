@@ -21,6 +21,8 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         grid = GetComponent<GridSetup>();
+        timer = maxTimer;
+        levelName.text = grid.Reset();
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class LevelManager : MonoBehaviour
     }
     void ResetLevel()
     {
-        if (currentScore < maxScore) SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
+        if (currentScore < maxScore) SceneManager.LoadScene(1);
         if (PlayerPrefs.GetInt("score") == 0) PlayerPrefs.SetInt("score", 1);
         else PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
 

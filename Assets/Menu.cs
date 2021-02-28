@@ -24,6 +24,6 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     public void Retry()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
+        SceneManager.LoadScene(0);
     }
 }
