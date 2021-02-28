@@ -6,13 +6,14 @@ public class GridSetup : MonoBehaviour
 {
     public GameObject black, white;
     public Texture2D[] maps;
+    public string[] mapNames;
     public Transform topRight;
     // Start is called before the first frame update
     void Start()
     {
         Create();
     }
-    void Create()
+    string Create()
     {
         int i = Random.Range(0, maps.Length);
 
@@ -23,14 +24,16 @@ public class GridSetup : MonoBehaviour
                 Instantiate(maps[i].GetPixel(x, y) == Color.black ? black : white, new Vector2(topRight.position.x + x * 0.25f, topRight.position.y + y * 0.25f), Quaternion.identity, transform);
             }
         }
+        return mapNames[i];
     }
     // Update is called once per frame
-    public void Reset()
+    public string Reset()
     {
         foreach (var item in GetComponentsInChildren<SpriteRenderer>())
         {
+            //check value
             Destroy(item.gameObject);
         }
-        Create();
+        return Create();
     }
 }
