@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
     void ResetLevel()
     {
         levelName.text = grid.Reset();
-        timer = Mathf.Clamp(maxTimer - timer, minTimer, maxTimer);
+        timer = Mathf.Clamp(maxTimer -= timer, minTimer, maxTimer);
+        roundCount += 1;
     }
 }
