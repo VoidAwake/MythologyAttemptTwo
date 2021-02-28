@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public Text levelName;
-    public Text timerText;
-    public Slider score;
+    [SerializeField] private Text levelName;
+    [SerializeField] private Text timerText;
+    [SerializeField] private Slider score;
     private float timer;
     public static int level;
-    public GridSetup grid;
+    private GridSetup grid;
     public static float maxScore;
     public static float currentScore = 20;
     // Start is called before the first frame update
     void Start()
     {
-        
+        grid = GetComponent<GridSetup>();
     }
 
     // Update is called once per frame
