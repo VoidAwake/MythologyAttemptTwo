@@ -21,9 +21,11 @@ public class GridSetup : MonoBehaviour
         {
             for (int y = 0; y < 40; y++)
             {
+                if (maps[i].GetPixel(x, y) == Color.black) LevelManager.maxScore++;
                 Instantiate(maps[i].GetPixel(x, y) == Color.black ? black : white, new Vector2(topRight.position.x + x * 0.25f, topRight.position.y + y * 0.25f), Quaternion.identity, transform);
             }
         }
+        LevelManager.maxScore = Mathf.RoundToInt(LevelManager.maxScore * 0.8f);
         return mapNames[i];
     }
     // Update is called once per frame

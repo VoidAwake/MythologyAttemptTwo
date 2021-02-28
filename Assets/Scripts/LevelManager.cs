@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     private float timer;
     public static int level;
     public GridSetup grid;
+    public static int maxScore;
+    public static int currentScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+        if (timer <= 0) ResetLevel();
         UpdateUI();
     }
     void UpdateUI()
