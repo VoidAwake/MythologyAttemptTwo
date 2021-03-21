@@ -18,7 +18,8 @@ public class paintDetector : MonoBehaviour
         if(paint.gameObject.tag == "painter"){
             Instantiate(replaceWith, transform.position, Quaternion.identity, transform.parent);
             Destroy(gameObject);
-            LevelManager.currentScore += Score * LevelManager.roundDifficulty;
+            if (Score > 0) LevelManager.currentScore += Score;
+            else LevelManager.currentScore += Score * LevelManager.roundDifficulty;
         }
     }
 }
