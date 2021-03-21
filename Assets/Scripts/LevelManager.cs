@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     public static float maxScore;
     public static float currentScore = 20;
     public static float roundCount = 0;
+    public static float roundDifficulty = 1;
     // Start is called before the first frame update
     void Start()
     {

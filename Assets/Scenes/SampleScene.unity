@@ -161,7 +161,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 494e6e0151ae0dc4688e8d68b7136c3b, type: 3}
   - {fileID: 2800000, guid: 048e8c9cf5723ce4184d5a6aaa25c0ca, type: 3}
   - {fileID: 2800000, guid: afe6ed15ebcc53647aa7fd710fbd35a5, type: 3}
-  - {fileID: 2800000, guid: 2e5eb18d18cfbd64ab4951491693627d, type: 3}
+  - {fileID: 2800000, guid: 3820c748310053e40b93e24202560d09, type: 3}
   mapNames:
   - Delta
   - Epsilon
@@ -170,7 +170,16 @@ MonoBehaviour:
   - Theta
   - three lines
   - Help
-  - Bolt
+  - Dionysis
+  mapDifficulty:
+  - 1
+  - 1.2
+  - 0.7
+  - 1
+  - 1
+  - 1
+  - 1
+  - 0.9
   topRight: {fileID: 816841669}
 --- !u!4 &80357823
 Transform:

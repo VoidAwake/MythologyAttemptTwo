@@ -7,6 +7,7 @@ public class GridSetup : MonoBehaviour
     public GameObject black, white;
     public Texture2D[] maps;
     public string[] mapNames;
+    public float[] mapDifficulty;
     public Transform topRight;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,11 @@ public class GridSetup : MonoBehaviour
                 Instantiate(maps[i].GetPixel(x, y) == Color.black ? black : white, new Vector2(topRight.position.x + x * 0.25f, topRight.position.y + y * 0.25f), Quaternion.identity, transform);
             }
         }
+        //float multiplier = LevelManager.maxScore / 1000;
+        //multiplier = Mathf.Clamp(multiplier + 0.6f, 0, 1);
+        //if()
+        Debug.Log(LevelManager.maxScore);
+        LevelManager.roundDifficulty = mapDifficulty[i];
         LevelManager.maxScore = Mathf.RoundToInt(LevelManager.maxScore * 0.7f);
         return mapNames[i];
     }

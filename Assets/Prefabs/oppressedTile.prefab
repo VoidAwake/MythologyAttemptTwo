@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replaceWith: {fileID: 8269705590241301494, guid: aea45457e2280334a91124d5c168db55,
     type: 3}
-  Score: 2.1
+  Score: 2
 --- !u!61 &-4932351996039320642
 BoxCollider2D:
   m_ObjectHideFlags: 0
